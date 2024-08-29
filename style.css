@@ -1,0 +1,272 @@
+:root{
+    --darker: rgb(0, 8, 18);
+    --dark: rgb(11, 30, 75);
+    --grey: rgb(133, 136, 141);
+   --primary: rgb(106, 111, 245);
+   --link: rgb(3, 102, 242);
+   --light: rgb(255, 255, 255);
+}
+
+
+/* 
+element
+element, element(selecting two element together)
+element element /. parent all-child
+.class
+#id
+element > element /. parent > direct-child
+element + element /. after the reference element
+
+:hover
+:first-child
+:last-child
+ */
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Preset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  /* margin: 0; */
+  /* padding: 0; */
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.25;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Removeall animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+      scroll-behavior: auto;
+    }
+  
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }}
+
+    /* ------------------------------------------------------------------------------------------------------ */
+ /* general styling */
+ body{
+    font-family: sans-serif;
+ }
+
+ main {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+ }
+
+ .container {
+    --max-width: 1200px;
+    --padding: 0.5rem;
+
+    width: min(var(--max-width), 100% - (var(--padding) * 2));
+    margin-inline: auto;
+    display: block;
+}
+
+ .aside {
+    background-color: #fffcf8;
+    width: 45%;
+    text-align: center;
+    padding-top: 67px;
+ }
+
+ @media (max-width: 768px) {
+    .aside{
+        display: none;
+    }
+ }
+
+ form{
+  margin-top: 25px;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: row;
+  gap: 24px;
+ }
+
+ input,select {
+    border: none;
+    outline: none;
+    background-color: #fafafa;
+    border-radius: 6px;
+    padding: 16px 24px 16px 10px;
+ }
+
+ label {
+    color: rgba(0, 0, 0, 0.88);
+    font-size: 1rem;
+ }
+
+form div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+ }
+
+ .span-full {
+    grid-column: span 2;
+ }
+
+ .form-title {
+    font-size: 1.75rem;
+    margin-bottom: -0.625rem;
+    font-weight: 700;
+    color: var(--dark);
+
+ }
+
+ form p {
+font-size: 0.9rem;
+color: var(--grey);
+ }
+
+ form p:not(.form-subtitle) {
+    margin-bottom: 1.5625rem;
+ }
+
+ .button {
+  background-color: var(--primary);
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  color: var(--light);
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+ }
+
+ .button:hover {
+    filter: drop-shadow(rgb(255, 243, 233) 5px 5px 5px) invert(20%);
+ }
+
+ .form-wrapper h3 {
+  font-size: 1rem;
+  color: var(--dark);
+  margin-bottom: 1rem;
+  text-align: right;
+  font-weight: 500;
+ }
+
+ a {
+  color: var(--link);
+  text-decoration: none;
+ }
+
+ .telephone {
+    color: var(--darker);
+ }
+
+.social-links_wrapper {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.625rem;
+}
+
+h1 {
+    font-size: 3.125rem;
+    color: var(--darker);
+    margin-bottom: 1.5625rem;
+}
+
+.aside img {
+    max-width: 500px;
+    vertical-align: center;
+    object-fit: contain;
+    margin-inline: auto;
+}
+
+.telephone + p {
+ font-size: 14px;
+ color: var(--darker);
+ margin-top: 0.625rem;
+}
+@media (min-width: 768px) {
+    .logo{
+        display: none;
+    }
+    .form-wrapper {
+        width: 55%;
+        padding: 40px;
+     }
+     form {
+        padding: 70px 30px;
+  width: 90%;
+  display: grid;
+     }
+ }
+ @media (max-width: 768px) {
+   form {
+    padding: 15px 15px 90px;
+   }
+   :where(.flow > :not(:first-child)) {
+    margin-top: var(--flow-spacer, 1em);
+}
+ .form-wrapper h3 {
+    text-align: center;
+}
+.button {
+    width: 100%;
+}
+.logo {
+    margin-inline: auto;
+    width: fit-content;
+    display: block;
+}
+}
+
+select:invalid {
+    color: red;
+}
+input:hover,select:hover{
+    border:1px solid var(--link);
+}
