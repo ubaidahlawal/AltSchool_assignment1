@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="media.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media</title>
+  </head>
+  <body>
+    <main class="container">
+      <h2>Media</h2>
+      <audio controls>
+        <source type="audio/mpeg" src="assests/opomulero.mp3" />
+      </audio>
+
+      <picture>
+        <source
+          media="(min-width:650px)"
+          srcset="
+            https://media.istockphoto.com/id/1327726288/photo/shot-of-a-happy-family-bonding-together-during-a-day-outside-in-the-garden.jpg?s=1024x1024&w=is&k=20&c=2V7kFSg8fdh6ZXcFjCF-By7SX2Ak955-PWeYNmWj-3w=
+          "
+        />
+        <img
+          src="https://media.istockphoto.com/id/1127245421/photo/woman-hands-praying-for-blessing-from-god-on-sunset-background.jpg?s=1024x1024&w=is&k=20&c=faoiFapQkhucuLuor9gBnblJ4KJpqvEgariqalvzRas="
+          alt=""
+        />
+
+        <source
+          media="(min-width:400px)"
+          srcset="
+            https://media.istockphoto.com/id/120173082/photo/grandparents-laughing-with-grandchildren.jpg?s=1024x1024&w=is&k=20&c=rMdhc9HX4PhBDFrdzFXjyG9aL3tF2E747TeLAzaVpEs=
+          "
+        />
+      </picture>
+
+      <video width="320" height="240" controls>
+        <source src="assests/video.mp4" type="video/mp4" />
+      </video>
+
+      <iframe
+        width="403"
+        height="717"
+        src="https://www.youtube.com/embed/0zJT1JUtyxs"
+        title="Surah Maryam 30-34"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+
+      <embed
+        src="https://media.geeksforgeeks.org/wp-content/uploads/20210723103530/simplescreesdfdsrecorder2021071.gif"
+        width="300px"
+        height="300px"
+      />
+    </main>
+  </body>
+</html>
